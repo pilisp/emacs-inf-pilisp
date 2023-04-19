@@ -67,7 +67,7 @@
 (require 'cl-lib)
 (require 'subr-x)
 
-(defvar inf-pilisp-startup-forms '((pilisp . "pl")))
+(defvar inf-pilisp-startup-forms '((pilisp . "pl -r")))
 
 (defvar inf-pilisp-repl-features
   '((pilisp . ((load . "(repl/load-file %s)")
