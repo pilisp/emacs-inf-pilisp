@@ -74,7 +74,8 @@
                (doc . "(doc %s)")
                (arglists . "(arglists %s)")
                (macroexpand . "(macroexpand '%s)")
-               (macroexpand-1 . "(macroexpand-1 '%s)")))))
+               (macroexpand-1 . "(macroexpand-1 '%s)")
+               (completion . "(repl/completions \"%s\")")))))
 
 (defvar-local inf-pilisp-repl-type 'pilisp
   "Symbol to define your REPL type.
@@ -1266,7 +1267,7 @@ evaluating \\[inf-pilisp-completion-form] at the REPL."
     (when (and proc completion-form (not (string-blank-p expr)))
       (let ((completion-expr (format completion-form (substring-no-properties expr))))
         (funcall inf-pilisp-completions-fn
-                 (inf-pilisp--process-response completion-expr proc  "(" ")"))))))
+                 (inf-pilisp--process-response completion-expr proc "(" ")"))))))
 
 (defconst inf-pilisp-pilisp-expr-break-chars "^[] \"'`><,;|&{()[@\\^]"
   "Regexp are hard.
